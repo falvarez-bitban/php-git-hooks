@@ -6,7 +6,7 @@ php-git-hooks
 [![Latest Stable Version](https://poser.pugx.org/bruli/php-git-hooks/v/stable.svg)](https://packagist.org/packages/bruli/php-git-hooks) [![Total Downloads](https://poser.pugx.org/bruli/php-git-hooks/downloads)](https://packagist.org/packages/bruli/php-git-hooks) [![Latest Unstable Version](https://poser.pugx.org/bruli/php-git-hooks/v/unstable.svg)](https://packagist.org/packages/bruli/php-git-hooks) [![License](https://poser.pugx.org/bruli/php-git-hooks/license.svg)](https://packagist.org/packages/bruli/php-git-hooks)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/584eb4ce-7de2-4bb0-9728-5e8be8e4ca3f/mini.png)](https://insight.sensiolabs.com/projects/584eb4ce-7de2-4bb0-9728-5e8be8e4ca3f)
 
-Git hooks for PHP projects.
+Git hooks for PHP projects
 
 Library based in git hook scripts for PHP projects.
 
