@@ -31,6 +31,9 @@ class CodeSnifferHandler extends ToolHandler
                 continue;
             }
 
+            $oldPath = getcwd();
+            $file = $oldPath.'/'.$file;
+            chdir(__DIR__.'/../../../../../../../');
             $processBuilder = new ProcessBuilder(array('php', 'bin/phpcs', '--standard='.self::STANDARD.'', $file));
             /** @var Process $phpCs */
             $phpCs = $processBuilder->getProcess();
@@ -43,6 +46,7 @@ class CodeSnifferHandler extends ToolHandler
 
                 throw new InvalidCodingStandardException();
             }
+            chdir($oldPath);
         }
 
         $this->output->writeln($this->outputHandler->getSuccessfulStepMessage());

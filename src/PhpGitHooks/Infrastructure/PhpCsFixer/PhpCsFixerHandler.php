@@ -33,7 +33,9 @@ class PhpCsFixerHandler extends ToolHandler implements InteractiveToolInterface,
             if (!$srcFile) {
                 continue;
             }
-
+            $oldPath = getcwd();
+            $file = $oldPath.'/'.$file;
+            chdir(__DIR__.'/../../../../../../../');
             $processBuilder = new ProcessBuilder(
                 array(
                     'php',
@@ -51,6 +53,7 @@ class PhpCsFixerHandler extends ToolHandler implements InteractiveToolInterface,
             if (false === $phpCsFixer->isSuccessful()) {
                 $errors[] = $phpCsFixer->getOutput();
             }
+            chdir($oldPath);
         }
 
         if ($errors) {

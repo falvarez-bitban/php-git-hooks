@@ -32,6 +32,9 @@ class PhpMDHandler extends ToolHandler implements RecursiveToolInterface
                 continue;
             }
 
+            $oldPath = getcwd();
+            $file = $oldPath.'/'.$file;
+            chdir(__DIR__.'/../../../../../../../');
             $processBuilder = new ProcessBuilder(
                 array(
                     'php',
@@ -49,6 +52,7 @@ class PhpMDHandler extends ToolHandler implements RecursiveToolInterface
             if (false === $process->isSuccessful()) {
                 $errors[] = $process->getOutput();
             }
+            chdir($oldPath);
         }
 
         $errors = array_filter($errors, function ($var) {
