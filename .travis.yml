@@ -13,7 +13,7 @@ script:
 
 notifications:
   email:
-    - brulics@gmail.com
+    - s.dieunidou@gmail.com
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar
