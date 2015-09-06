@@ -18,7 +18,14 @@ class PhpUnitProcessBuilder implements ProcessBuilderInterface
     public function getProcessBuilder()
     {
         $path = __DIR__.'/../../../../../../../bin/phpunit';
-        return new ProcessBuilder(array('php', $path, getcwd()));
+        $params = array('php', $path, getcwd());
+
+        if (file_exists($path.'/app/phpunit.xml')
+            || file_exists($path.'/app/phpunit.xml.dist')) {
+            $params[] = '-c app';
+        }
+
+        return new ProcessBuilder($params);
     }
 
     /**
